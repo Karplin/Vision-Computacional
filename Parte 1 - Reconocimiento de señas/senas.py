@@ -15,6 +15,11 @@ with mp_hands.hands(
 
     image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
+    results = hands.process(image_rgb)
+
+    print("Handedness: ", results.multi_handedness)
+    
+
     image = cv2.flip(image, 1)
 cv2.imshow("Image", image)
 cv2.waitkey(0)
